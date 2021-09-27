@@ -6,7 +6,7 @@ services:
       - "5000:5000"
     volumes:
       - type: bind
-        source: /home/andru/Development/MyProjs/Motivately/api
+        source: ${API_SOURCE}
         target: /app
     environment: 
       FLASK_ENV: development
@@ -16,7 +16,7 @@ services:
     - "3000:3000"
     volumes:
       - type: bind
-        source: /home/andru/Development/MyProjs/Motivately/client
+        source: ${CLIENT_SOURCE}
         target: /app
   database:
     image: postgres
