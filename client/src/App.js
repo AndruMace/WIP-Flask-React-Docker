@@ -42,7 +42,7 @@ function App() {
 
   function renderResponse(data) { 
     if (data['Error']) {
-      return `Server returned and error. Error is as follows: ${data.Error}`
+      return `Server returned an error. Error is as follows: ${data.Error}`
     } else if (data['Success']) {
       return `Server response successful. Here is the data returned: ${JSON.stringify(data.Success)}`
     } else {
