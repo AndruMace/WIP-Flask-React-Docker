@@ -2,6 +2,7 @@ from celery import Celery
 from flask import Flask
 from werkzeug.debug import DebuggedApplication
 from werkzeug.middleware.proxy_fix import ProxyFix
+from flask_cors import CORS
 
 # Extensions
 from server.extensions import debug_toolbar
@@ -47,7 +48,7 @@ def create_app(settings_override=None):
     :return: Flask app
     """
     app = Flask(__name__, static_folder="../public", static_url_path="")
-
+    CORS(app)
     app.config.from_object("config.settings")
 
     if settings_override:

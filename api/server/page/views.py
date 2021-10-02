@@ -10,24 +10,10 @@ from server.initializers import redis
 
 page = Blueprint("page", __name__)
 
-def get_hit_count():
-    retries = 5
-    while True:
-        try: 
-            return cache.incr('hits')
-        except redis.exceptions.Connectionerror as exc:
-            if retries == 0:
-                raise exc
-            retries -= 1
-            time.sleep(0.5)
 
 @page.get("/")
 def home():
-    count = get_hit_count()
-    return {
-        'reddis hits' : '{}'.format(count)
-    }
-
+    return {'res' : 'Success'}
 
 @page.get("/up")
 def up():
