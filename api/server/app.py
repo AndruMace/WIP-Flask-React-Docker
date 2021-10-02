@@ -10,7 +10,7 @@ from server.extensions import db
 from server.extensions import flask_static_digest
 
 
-from server.page.views import page
+from server.api.views import api
 
 
 
@@ -55,7 +55,7 @@ def create_app(settings_override=None):
         app.config.update(settings_override)
 
     middleware(app)
-    app.register_blueprint(page)
+    app.register_blueprint(api)
     extensions(app)
 
     return app
