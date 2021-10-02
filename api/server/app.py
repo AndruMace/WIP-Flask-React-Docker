@@ -5,7 +5,6 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from flask_cors import CORS
 
 # Extensions
-from server.extensions import debug_toolbar
 from server.extensions import db
 from server.extensions import flask_static_digest
 
@@ -68,7 +67,6 @@ def extensions(app):
     :param app: Flask application instance
     :return: None
     """
-    debug_toolbar.init_app(app)
     db.init_app(app)
     flask_static_digest.init_app(app)
 

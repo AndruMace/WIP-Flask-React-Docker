@@ -18,11 +18,16 @@ services:
       - type: bind
         source: ${CLIENT_SOURCE}
         target: /app
-  database:
+  db:
     image: postgres
     restart: always
-    environment: 
+    environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_USER: admin
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
   redis:
     image: "redis:alpine"
