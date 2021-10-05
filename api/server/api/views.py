@@ -25,8 +25,8 @@ def register():
     else:
         return {'Error' : 'no data'}
 
+
 @api.get("/up")
 def up():
-    redis.ping()
     db.engine.execute("SELECT 1")
     return ""

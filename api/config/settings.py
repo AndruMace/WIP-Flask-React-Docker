@@ -8,9 +8,9 @@ SERVER_NAME = os.getenv(
 )
 
 # SQLAlchemy.
-pg_user = os.getenv("POSTGRES_USER", "admin")
+pg_user = os.getenv("POSTGRES_USER", "postgres")
 pg_pass = os.getenv("POSTGRES_PASSWORD", "password")
-pg_host = os.getenv("POSTGRES_HOST", "postgres")
+pg_host = os.getenv("POSTGRES_HOST", "db")
 pg_port = os.getenv("POSTGRES_PORT", "5432")
 pg_db = os.getenv("POSTGRES_DB", pg_user)
 db = f"postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
